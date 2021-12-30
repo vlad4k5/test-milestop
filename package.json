@@ -25,6 +25,16 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "semi": false,
+    "jsxBracketSameLine": false,
+    "endOfLine": "auto"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -44,6 +54,17 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-prettier": "^0.0.0-empty",
+    "gh-pages": "^3.2.3",
+    "prettier": "^2.5.1"
   }
 }
