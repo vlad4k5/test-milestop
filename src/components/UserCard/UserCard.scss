@@ -1,0 +1,26 @@
+.userCard {
+  width: 280px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  border: 1px solid #a1a1a1;
+  border-radius: 20px;
+
+  .userPhoto {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .userName {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .userEmail {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

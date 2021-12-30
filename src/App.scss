@@ -1,0 +1,10 @@
+.App {
+  width: 1500px;
+  margin: 50px auto;
+}
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}

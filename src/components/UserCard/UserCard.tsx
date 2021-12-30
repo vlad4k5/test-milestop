@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import './UserCard.scss'
 
 type UserCardType = {
   photoUrl: string
@@ -11,14 +12,14 @@ type UserCardType = {
 
 const UserCard: FC<UserCardType> = ({ photoUrl, firstName, lastName, gender, email, date }) => {
   return (
-    <div>
-      <img src={photoUrl} />
-      <div>
+    <div className="userCard">
+      <img className="userPhoto" src={photoUrl} />
+      <span className="userName">
         {firstName} {lastName}
-      </div>
-      <div>{gender}</div>
-      <div>{email}</div>
-      <div>{date}</div>
+      </span>
+      <span>{gender}</span>
+      <span className="userEmail">{email}</span>
+      <span>{date.slice(0, 10)}</span>
     </div>
   )
 }
