@@ -34,7 +34,8 @@
     "bracketSpacing": true,
     "semi": false,
     "jsxBracketSameLine": false,
-    "endOfLine": "auto"
+    "endOfLine": "auto",
+    "multiline": false
   },
   "eslintConfig": {
     "extends": [

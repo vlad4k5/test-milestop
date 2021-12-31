@@ -35,12 +35,12 @@ function App() {
     })()
   }, [])
 
-  const getNewUsers = async (gender: string) => {
+  const getNewUsers = async (gender: string, nationality: Array<string>) => {
     setIsFetching(true)
     const res = await axios.get(
       `https://randomuser.me/api/?results=15&inc=email,dob,name,picture,nat,gender${
         gender ? `&gender=${gender}` : ''
-      }`
+      }${nationality.length !== 0 ? `&nat=${nationality.join(',')}` : ''}`
     )
     setIsFetching(false)
     setUsers(res.data.results)
