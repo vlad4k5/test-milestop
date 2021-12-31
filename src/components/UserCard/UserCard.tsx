@@ -8,9 +8,18 @@ type UserCardType = {
   gender: string
   email: string
   date: string
+  nationality: string
 }
 
-const UserCard: FC<UserCardType> = ({ photoUrl, firstName, lastName, gender, email, date }) => {
+const UserCard: FC<UserCardType> = ({
+  photoUrl,
+  firstName,
+  lastName,
+  gender,
+  email,
+  date,
+  nationality,
+}) => {
   return (
     <div className="userCard">
       <img className="userPhoto" src={photoUrl} />
@@ -20,6 +29,7 @@ const UserCard: FC<UserCardType> = ({ photoUrl, firstName, lastName, gender, ema
       <span>{gender}</span>
       <span className="userEmail">{email}</span>
       <span>{date.slice(0, 10)}</span>
+      <span>{nationality}</span>
     </div>
   )
 }
