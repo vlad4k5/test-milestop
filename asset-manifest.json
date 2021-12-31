@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/test-milestop/static/css/main.8a32eeeb.css",
+    "main.js": "/test-milestop/static/js/main.9fc08bb7.js",
+    "index.html": "/test-milestop/index.html",
+    "main.8a32eeeb.css.map": "/test-milestop/static/css/main.8a32eeeb.css.map",
+    "main.9fc08bb7.js.map": "/test-milestop/static/js/main.9fc08bb7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a32eeeb.css",
+    "static/js/main.9fc08bb7.js"
+  ]
+}
