@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react'
+import React, { useState, FC, useEffect } from 'react'
 import './Filters.scss'
 
 type TFilters = {
@@ -28,21 +28,38 @@ const Filters: FC<TFilters> = ({ getNewUsers }) => {
     'US',
   ]
 
-  const onChangeGenderFilter = (e: any) => {
+  useEffect(() => {
+    if (sessionStorage.getItem('gender')) {
+      setGender(String(sessionStorage.getItem('gender')))
+    }
+    if (sessionStorage.getItem('nationality')) {
+      setNationality(sessionStorage.getItem('nationality')!.split(' '))
+    }
+  }, [])
+
+  const onChangeGenderFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setGender(e.target.value)
+    sessionStorage.setItem('gender', `${e.target.value}`)
   }
 
-  const onChangeNationality = (e: any) => {
-    if (nationality.includes(e.currentTarget.value)) {
+  const onChangeNationality = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (nationality.includes(e.target.value)) {
       setNationality(nationality.filter(elem => elem !== e.target.value))
+      sessionStorage.setItem(
+        'nationality',
+        nationality.filter(elem => elem !== e.target.value).join(' ')
+      )
     } else {
       setNationality([...nationality, e.target.value])
+      sessionStorage.setItem('nationality', [...nationality, e.target.value].join(' '))
     }
   }
 
   const clearFilters = () => {
     setNationality([])
     setGender('All')
+    sessionStorage.setItem('nationality', '')
+    sessionStorage.setItem('gender', 'All')
   }
 
   const onApplyFilters = () => {
