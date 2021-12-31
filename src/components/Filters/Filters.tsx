@@ -33,7 +33,6 @@ const Filters: FC<TFilters> = ({ getNewUsers }) => {
   }
 
   const onChangeNationality = (e: any) => {
-    debugger
     if (nationality.includes(e.currentTarget.value)) {
       setNationality(nationality.filter(elem => elem !== e.target.value))
     } else {
@@ -50,19 +49,27 @@ const Filters: FC<TFilters> = ({ getNewUsers }) => {
     getNewUsers(gender, nationality)
   }
   return (
-    <div>
-      <select onChange={onChangeGenderFilter} value={gender}>
-        <option value="" label="All" />
-        <option value="male" label="Male" />
-        <option value="female" label="Female" />
-      </select>
-      <select onChange={onChangeNationality} value={nationality} multiple>
-        {nationalityList.map(nat => (
-          <option key={nat} value={nat} label={nat} />
-        ))}
-      </select>
-      <button onClick={onApplyFilters}>Apply Filters</button>
-      <button onClick={clearFilters}>clear</button>
+    <div className="filters">
+      <div className="select">
+        <select onChange={onChangeGenderFilter} value={gender}>
+          <option value="" label="All" />
+          <option value="male" label="Male" />
+          <option value="female" label="Female" />
+        </select>
+      </div>
+      <div className="select">
+        <select onChange={onChangeNationality} value={nationality} multiple>
+          {nationalityList.map(nat => (
+            <option key={nat} value={nat} label={nat} />
+          ))}
+        </select>
+      </div>
+      <button className="applyFiltersButton" onClick={onApplyFilters}>
+        Apply Filters
+      </button>
+      <button className="clearFiltersButton" onClick={clearFilters}>
+        Clear Filters
+      </button>
       <span>{nationality}</span>
     </div>
   )

@@ -1,0 +1,44 @@
+.filters {
+  display: flex;
+  gap: 60px;
+  align-items: flex-end;
+  margin-bottom: 30px;
+
+  button {
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .applyFiltersButton {
+    background-color: rgb(94, 96, 228);
+  }
+
+  .clearFiltersButton {
+    background-color: rgb(223, 77, 77);
+  }
+}
+
+.select {
+  position: relative;
+
+  select {
+    display: block;
+    width: 200px;
+    padding: 5px;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    appearance: none;
+    color: #444;
+    font-size: 18px;
+
+    &:focus {
+      outline: 0;
+      border-color: rgb(94, 96, 228);
+    }
+  }
+}
