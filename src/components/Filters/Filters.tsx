@@ -42,7 +42,7 @@ const Filters: FC<TFilters> = ({ getNewUsers }) => {
     sessionStorage.setItem('gender', `${e.target.value}`)
   }
 
-  const onChangeNationality = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const onChangeNationalityFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (nationality.includes(e.target.value)) {
       setNationality(nationality.filter(elem => elem !== e.target.value))
       sessionStorage.setItem(
@@ -75,7 +75,7 @@ const Filters: FC<TFilters> = ({ getNewUsers }) => {
         </select>
       </div>
       <div className="select">
-        <select onChange={onChangeNationality} value={nationality} multiple>
+        <select onChange={onChangeNationalityFilter} value={nationality} multiple>
           {nationalityList.map(nat => (
             <option key={nat} value={nat} label={nat} />
           ))}
@@ -87,7 +87,6 @@ const Filters: FC<TFilters> = ({ getNewUsers }) => {
       <button className="clearFiltersButton" onClick={clearFilters}>
         Clear Filters
       </button>
-      <span>{nationality}</span>
     </div>
   )
 }

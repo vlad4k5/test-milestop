@@ -24,17 +24,6 @@ function App() {
   const [users, setUsers] = useState<Array<TUser>>([])
   const [isFetching, setIsFetching] = useState(false)
 
-  useEffect(() => {
-    ;(async () => {
-      setIsFetching(true)
-      const res = await axios.get(
-        'https://randomuser.me/api/?results=15&inc=email,dob,name,picture,nat,gender'
-      )
-      setIsFetching(false)
-      setUsers(res.data.results)
-    })()
-  }, [])
-
   const getNewUsers = async (gender: string, nationality: Array<string>) => {
     setIsFetching(true)
     const res = await axios.get(
@@ -46,8 +35,12 @@ function App() {
     setUsers(res.data.results)
   }
 
+  useEffect(() => {
+    getNewUsers('', [])
+  }, [])
+
   return (
-    <div className="App">
+    <div className="app">
       <Filters getNewUsers={getNewUsers} />
       {!isFetching ? (
         <div className="users">
